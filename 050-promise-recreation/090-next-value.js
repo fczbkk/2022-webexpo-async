@@ -20,7 +20,7 @@ const nothing = (value) => ({
   }
 })
 
-const getUser = (name) => typeof name === 'string' ? something(name) : nothing()
+const getUser = (name) => typeof name === 'string' ? something(name) : nothing('name must be a string')
 
 const user = getUser('Riki Fridrich')
 
