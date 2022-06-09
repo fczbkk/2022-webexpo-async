@@ -9,7 +9,7 @@ const something = (value) => ({
 
 const nothing = (error) => ({
   next: () => nothing(error),
-  catch: (fn) => something(fn(error))
+  catch: (fn) => nothing(fn(error))
 })
 
 const getUser = (name) => typeof name === 'string' ? something(name) : nothing('name must be a string')
